@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <form method="POST" action="<?= BASE_URL ?>/insert">
+                    <form method="POST" class="insert-ajax" action="<?= BASE_URL ?>/insert">
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="nome">Nome</label>
