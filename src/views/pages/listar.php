@@ -28,8 +28,7 @@
             <div class="buscar">
                 <form class="form-inline form-buscar" method="POST" action="<?= BASE_URL ?>/buscar">
                     <div class="form-group mx-sm-3 mb-2">
-                        <input type="text" class="form-control" name="filtro"
-                            placeholder="Filtrar Buscas...">
+                        <input type="text" class="form-control" name="filtro" placeholder="Filtrar Buscas...">
                     </div>
                     <button type="submit" class="btn btn-success mb-2">Buscar</button>
                 </form>
@@ -51,15 +50,20 @@
                     <?php foreach($usuarios as $usuario): ?>
                     <tr>
                         <th scope="row"><?= $usuario['id'] ?></th>
-                        <td class="link"><a href="alterar"
-                                <?= $_SESSION['id'] = $usuario['id'] ?>><?= $usuario['nome'] ?></a></td>
+                        <td class="link">
+                            <form action="alterar" method="post">
+                                <input type="hidden" name="id" value="<?= $usuario['id'] ?>">
+                                <button><?= $usuario['nome'] ?></button>
+                            </form>
+                        </td>
                         <td><?= $usuario['email'] ?></td>
                         <td class="cpf"><?= $usuario['cpf'] ?></td>
                         <td class="telefone"><?= $usuario['telefone'] ?></td>
                         <td class="cep"><?= $usuario['cep'] ?></td>
                         <!-- <td class="text-center"><a href="<?= BASE_URL ?>/delete/<?= $usuario['id'] ?>"><i class="fas fa-trash-alt"
                                     style="color: #27b67c;"></i></a></td> -->
-                        <td class="text-center delete-ajax"><a href="#" data-id="<?= $usuario['id'] ?>" data-action="delete"><i class="fas fa-trash-alt" style="color: #27b67c;"></i></a></td>
+                        <td class="text-center delete-ajax"><a href="#" data-id="<?= $usuario['id'] ?>"
+                                data-action="delete"><i class="fas fa-trash-alt" style="color: #27b67c;"></i></a></td>
                     </tr>
                     <?php endforeach; ?>
                     <?php else: ?>

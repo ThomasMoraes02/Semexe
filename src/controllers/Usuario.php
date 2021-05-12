@@ -66,7 +66,8 @@ class Usuario
 
     public function alterar(): void
     {
-        $id = $_SESSION['id'];
+        $id = $_POST['id'];
+        
         $usuario = $this->model->getUserById($id);
 
         $data = [

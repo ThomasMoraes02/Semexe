@@ -9,7 +9,11 @@ class Usuario_Model
 {
     public function __construct()
     {  
-        $db = new PDO(DB_DRIVER.': hosts='.DB_HOST.'; dbname='.DB_NAME, DB_USER, DB_PASS);
+        try {
+            $db = new PDO(DB_DRIVER.': hosts='.DB_HOST.'; dbname='.DB_NAME, DB_USER, DB_PASS);
+        } catch(Exception $e) {
+            throw new Exception("Banco de Dados não configurado! \n Erro: {$e->getMessage()}");
+        }
         $this->db = $db;
     }
 

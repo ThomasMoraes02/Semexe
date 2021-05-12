@@ -152,6 +152,17 @@
     text-decoration: none;
 }
 
+.link button {
+    color: #27b67c;
+    font-weight: bold;
+    border: none;
+}
+
+.link button:hover {
+    color: #145239;
+    text-decoration: none;
+}
+
 .tabela th {
     text-align: center;
     color: #145239;
