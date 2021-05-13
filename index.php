@@ -3,7 +3,7 @@
 use Src\config\Route;
 
 // Carregamento automático das classes
-require_once __DIR__ . "/autoload.php";
+require_once __DIR__ . "/src/config/autoload.php";
 
 // Configurações da aplicação
 require_once __DIR__ . "/src/config/config.php";

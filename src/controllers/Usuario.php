@@ -18,24 +18,13 @@ class Usuario
         try {
             $this->model = new Usuario_Model();
         } catch(Exception $e) {
-
-            $data = array(
-                "title" => "Home",
-                "message" => $e->getMessage(),
-            );
-            
-            $this->view($data,"home");
+            $this->view(["message" => "Erro: {$e->getMessage()}"]);
         }
     }
 
     public function index(): void
     {
-        $data = array(
-            "title" => "Home",
-            "message" => "Welcome to the system...",
-        );
-
-        $this->view($data,"home");
+        $this->view(["message" => "Welcome to the system..."]);
     }
 
     public function cadastrar(): void
@@ -44,11 +33,7 @@ class Usuario
             $this->redirect("home");
         }
 
-        $data = array(
-            "title" => "Cadastrar"
-        );
-
-        $this->view($data, "cadastrar");
+        $this->view(["title" => "Cadastrar"],"cadastrar");
     }
 
     public function insert(): void
@@ -83,7 +68,7 @@ class Usuario
             "usuarios" => $usuarios,
         );
 
-        $this->view($data, "listar");
+        $this->view($data,"listar");
     }
 
     public function alterar(): void
@@ -104,7 +89,7 @@ class Usuario
             "usuario" => $usuario
         );
 
-        $this->view($data, "alterar");
+        $this->view($data,"alterar");
     }
 
     public function update(): void

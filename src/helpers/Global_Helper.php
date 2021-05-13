@@ -6,10 +6,11 @@ Trait Global_Helper
 {
     public function view($data = NULL, $page = "home")
     {
+        $title = "Home";
         extract($data);
 
         include_once __DIR__ . "/../views/template/header.php";
-        include_once __DIR__ . "/../views/pages/$page.php";
+        include_once __DIR__ . "/../views/pages/{$page}.php";
         include_once __DIR__ . "/../views/template/scripts.php";
         include_once __DIR__ . "/../views/template/footer.php";
     }
@@ -24,7 +25,7 @@ Trait Global_Helper
 
     public function redirect($page)
     {
-        header("Location: " . BASE_URL . "/$page");
+        header("Location: " . BASE_URL . "/{$page}");
     }
 
     public function removeFormatacaoTelefone($telefone)
