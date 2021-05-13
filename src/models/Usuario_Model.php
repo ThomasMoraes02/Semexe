@@ -3,7 +3,6 @@
 namespace Src\models;
 
 use PDO;
-use Exception;
 
 class Usuario_Model
 {

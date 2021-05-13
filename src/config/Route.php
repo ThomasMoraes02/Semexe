@@ -2,6 +2,7 @@
 
 namespace Src\config;
 
+use Exception;
 use Src\controllers\Usuario;
 
 class Route
@@ -24,8 +25,11 @@ class Route
         $controller = new Usuario();
 
         $parseUrl = parse_url(BASE_URL);
-
         $path = $parseUrl['path'];
+        
+        if(!$path) {
+            throw new Exception("Rota não configurada! Defina a URL em: src\config\config.php -> BASE_URL", 1);
+        }
 
         switch($request) {
             case "$path/":

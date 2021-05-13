@@ -29,10 +29,8 @@ class Usuario
 
     public function cadastrar(): void
     {
-        if(!isset($this->model)) {
-            $this->redirect("home");
-        }
-
+        if(!isset($this->model)) $this->redirect("home");
+           
         $this->view(["title" => "Cadastrar"],"cadastrar");
     }
 
@@ -57,9 +55,7 @@ class Usuario
 
     public function listar(): void
     {
-        if (!isset($this->model)) {
-            $this->redirect("home");
-        }
+        if (!isset($this->model)) $this->redirect("home");
 
         $usuarios = $this->model->getUsers();
 
@@ -73,9 +69,7 @@ class Usuario
 
     public function alterar(): void
     {
-        if (!isset($this->model)) {
-            $this->redirect("home");
-        }
+        if (!isset($this->model)) $this->redirect("home");
 
         try {
             $id = $_POST['id'];
