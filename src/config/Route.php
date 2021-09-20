@@ -3,12 +3,11 @@
 namespace Src\config;
 
 use Exception;
-use Src\controllers\Usuario;
+use Src\controllers\Web;
+use Src\controllers\Admin;
 
 class Route
 {
-    public string $url;
-
     public function __construct(string $url)
     {
         $this->url = $url;
@@ -22,7 +21,8 @@ class Route
 
     private function setRoute($request):void 
     {
-        $controller = new Usuario();
+        $controller = new Web();
+        $controller_admin = new Admin();
 
         $parseUrl = parse_url(BASE_URL);
         $path = $parseUrl['path'];
@@ -33,6 +33,26 @@ class Route
 
         switch($request) {
             case "$path/":
+                $controller->login();
+                break;
+
+            case "$path/autenticacao":
+                $controller->autenticacao();
+                break;
+
+            case "$path/logout":
+                $controller->logout();
+                break;
+
+            case "$path/admin":
+                $controller_admin->index();
+                break;
+
+            case "$path/adm-cadastrar":
+                $controller_admin->cadastrar();
+                break;
+
+            case "$path/home":
                 $controller->index();
                 break;
             

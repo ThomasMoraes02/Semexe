@@ -4,11 +4,13 @@ namespace Src\models;
 
 use PDO;
 
-class Usuario_Model
+class Web_Model
 {
     public function __construct()
     {  
-        $db = new PDO(DB_DRIVER.': hosts='.DB_HOST.'; dbname='.DB_NAME, DB_USER, DB_PASS);
+        // $db = new PDO(DB_DRIVER.': hosts='.DB_HOST.'; dbname='.DB_NAME, DB_USER, DB_PASS);
+        // $db = new PDO("mysql:host=awsmysqlserver.cpmmtmvm6bii.us-east-2.rds.amazonaws.com;dbname=test_database_aws","admin","aws123456");
+        $db = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME.";",DB_USER, DB_PASS);
         $this->db = $db;
     }
 
@@ -87,5 +89,12 @@ class Usuario_Model
         $sql = "SELECT * FROM tb_user WHERE nome LIKE '%".$user."%' OR email LIKE '%".$user."%' OR telefone LIKE '%".$user."%' OR cpf LIKE '%".$user."%' ";
 
         return $this->db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getAdmin($email)
+    {
+        $sql = "SELECT * FROM tb_admin WHERE email_admin LIKE '%".$email."%'";
+    
+        return $this->db->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
 }

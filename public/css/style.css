@@ -44,9 +44,6 @@
     text-decoration: none;
     color: #145239;
     transition: .5s;
-    border: 2.2px solid #139661;
-    border-radius: 10px;
-    padding: 10px;
 }
 
 .navegacao ul li {
@@ -204,4 +201,48 @@
     to {
         transform: rotate(360deg);
     }
+}
+
+/* Login */
+.login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DDD;
+}
+
+.form-login {
+    flex-basis: 450px;
+}
+
+.card-header {
+    text-align: center;
+}
+
+.title-login {
+    color: #27b67c;
+    font-family: circular std book, Roboto, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.card-body label {
+    font-family: circular std book, Roboto, sans-serif;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Admin */
+
+.admin-home {
+    margin-top: 20px;
+}
+
+.admin-home h2 {
+    text-align: center;
 }

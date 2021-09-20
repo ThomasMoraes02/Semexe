@@ -37,5 +37,12 @@ Trait Global_Helper
     {
         return str_replace([".","-"], "", $cep);
     }
+
+    public function pre($data)
+    {
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
+    }
 }
 

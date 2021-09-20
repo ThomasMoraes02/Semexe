@@ -104,6 +104,13 @@ $(function() {
     });
 });
 
+// Login
+var headerDisabled = $("#header-disabled").val();
+
+if(headerDisabled == "disabled") {
+    $("nav").hide();
+}
+
 // Maquina de escrever
 
 function TypeWriter(elemento) {
