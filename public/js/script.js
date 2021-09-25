@@ -7,7 +7,7 @@ function viaCep() {
             $("#logradouro").val("");
             $("#bairro").val("");
             $("#cidade").val("");
-            $("#uf").val("");
+            $("#estado").val("");
             $("#ibge").val("");
         }
 
@@ -30,7 +30,7 @@ function viaCep() {
                     $("#logradouro").val("...");
                     $("#bairro").val("...");
                     $("#cidade").val("...");
-                    $("#uf").val("...");
+                    $("#estado").val("...");
                     $("#ibge").val("...");
 
                     //Consulta o webservice viacep.com.br/
@@ -41,7 +41,7 @@ function viaCep() {
                             $("#logradouro").val(dados.logradouro);
                             $("#bairro").val(dados.bairro);
                             $("#cidade").val(dados.localidade);
-                            $("#uf").val(dados.uf);
+                            $("#estado").val(dados.estado);
                             $("#ibge").val(dados.ibge);
                         } //end if.
                         else {

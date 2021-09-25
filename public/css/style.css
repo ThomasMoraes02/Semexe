@@ -126,6 +126,10 @@
     font-family: circular std book, Roboto, sans-serif;
 }
 
+.formulario input:hover {
+    border-color: #225541;
+}
+
 
 /* Listar */
 

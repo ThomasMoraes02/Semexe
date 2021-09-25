@@ -22,8 +22,8 @@
             <div class="card-footer">
                 <span></span>
                 <?php if(isset($_SESSION['message']) && isset($_SESSION['type'])): ?>
-                        <span class="lead text-danger"><?= $_SESSION['message'] ?></span>
-                    <?php endif ?>
+                <span class="lead text-danger"><?= $_SESSION['message'] ?></span>
+                <?php endif ?>
                 <button type="submit" class="bnt btn-lg btn-success">Entrar</button>
             </div>
         </div>

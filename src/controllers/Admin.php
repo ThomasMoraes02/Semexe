@@ -33,7 +33,7 @@ class Admin
     public function cadastrar()
     {
         $admin = $_POST;
-        $admin['senha'] = password_hash($admin['senha'], PASSWORD_DEFAULT);
+        $admin['senha_admin'] = password_hash($admin['senha'], PASSWORD_DEFAULT);
         
         $this->model->insertAdm($admin);
 

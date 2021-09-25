@@ -4,13 +4,11 @@ namespace Src\models;
 
 use PDO;
 
-class Web_Model
+class Web_Model extends Model
 {
     public function __construct()
     {  
-        // $db = new PDO(DB_DRIVER.': hosts='.DB_HOST.'; dbname='.DB_NAME, DB_USER, DB_PASS);
-        // $db = new PDO("mysql:host=awsmysqlserver.cpmmtmvm6bii.us-east-2.rds.amazonaws.com;dbname=test_database_aws","admin","aws123456");
-        $db = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME.";",DB_USER, DB_PASS);
+        $db = parent::Connection();
         $this->db = $db;
     }
 

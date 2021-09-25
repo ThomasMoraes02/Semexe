@@ -4,11 +4,11 @@ namespace Src\models;
 
 use PDO;
 
-class Admin_Model
+class Admin_Model extends Model
 {
     public function __construct()
     {
-        $db = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME.";",DB_USER, DB_PASS);
+        $db = parent::Connection();
         $this->db = $db;
     }
 
@@ -23,13 +23,13 @@ class Admin_Model
     {
         extract($admin);
 
-        $sql = "INSERT INTO tb_admin (nome_admin, email_admin, senha_admin) VALUES (:nome, :email_admin, :senha_admin)";
+        $sql = "INSERT INTO tb_admin (nome_admin, email_admin, senha_admin) VALUES (:nome_admin, :email_admin, :senha_admin)";
 
         $stmt = $this->db->prepare($sql);
 
-        $stmt->bindParam(":nome", $nome);
-        $stmt->bindParam(":email", $email);
-        $stmt->bindParam(":senha", $senha);
+        $stmt->bindParam(":nome_admin", $nome_admin);
+        $stmt->bindParam(":email_admin", $email_admin);
+        $stmt->bindParam(":senha_admin", $senha_admin);
 
         $stmt->execute();
     }

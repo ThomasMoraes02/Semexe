@@ -10,17 +10,17 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="nome">Nome</label>
-                                <input type="text" name="nome" id="nome" class="form-control"
+                                <input type="text" name="nome_admin" id="nome" class="form-control"
                                     placeholder="Digite seu nome completo" value="" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">E-mail</label>
-                                <input type="email" name="email" id="email" class="form-control"
+                                <input type="email" name="email_admin" id="email" class="form-control"
                                     placeholder="Digite seu e-mail" required>
                             </div>
                             <div class="form-group">
                                 <label for="senha">Senha</label>
-                                <input type="password" name="senha" id="senha" class="form-control"
+                                <input type="password" name="senha_admin" id="senha" class="form-control"
                                     placeholder="Defina uma senha" required>
                             </div>
                         </div>
@@ -41,6 +41,7 @@
                             <th scope="col">ID</th>
                             <th scope="col">Nome</th>
                             <th scope="col">E-mail</th>
+                            <th scope="col">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -50,6 +51,7 @@
                             <th scope="row"><?php echo $admin['id_admin'] ?></th>
                             <td><?php echo $admin['nome_admin'] ?></td>
                             <td><?php echo $admin['email_admin'] ?></td>
+                            <td> Deletar </td>
                         </tr>
                             <?php endforeach; ?>
                         <?php endif ?>
